@@ -9,6 +9,7 @@ import com.sk89q.minecraft.util.commands.CommandContext;
 import com.sk89q.minecraft.util.commands.CommandException;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
+import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.block.Block;
 import org.bukkit.command.CommandSender;
@@ -569,7 +570,9 @@ public class InputUtil {
                     CommandBook.inst().checkPermission(source, "commandbook.locations.target");
                     Player player = checkPlayer(source);
                     Location playerLoc = player.getLocation();
-                    Block targetBlock = player.getTargetBlock(null, 100);
+                    // Needed to remove ambiguous call
+                    Set<Material> blank = new HashSet<Material>();
+                    Block targetBlock = player.getTargetBlock(blank, 100);
 
                     if (targetBlock == null) {
                         throw new CommandException("Failed to find a block in your target!");
