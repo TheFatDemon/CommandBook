@@ -85,8 +85,8 @@
     </snapshotRepository>
   </distributionManagement>
   <build>
-    <defaultGoal>install</defaultGoal>
-    <sourceDirectory>${basedir}/src/main/java</sourceDirectory>
+    <defaultGoal>clean install</defaultGoal>
+    <sourceDirectory>${basedir}/src/main/java/</sourceDirectory>
     
     <extensions>
       <extension>
