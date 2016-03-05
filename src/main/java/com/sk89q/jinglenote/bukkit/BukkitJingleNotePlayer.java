@@ -26,9 +26,9 @@ public class BukkitJingleNotePlayer extends JingleNotePlayer {
         if (p == null || !p.isOnline() || note == null)
             return;
 
-        p.playSound(p.getLocation(), toSound(note.getInstrument()), note.getVelocity(), note.getNote());
+        //p.playSound(p.getLocation(), toSound(note.getInstrument()), note.getVelocity(), note.getNote());
     }
-
+/*
     public Sound toSound(Instrument instrument) {
 
         switch(instrument) {
@@ -50,4 +50,5 @@ public class BukkitJingleNotePlayer extends JingleNotePlayer {
                 return Sound.NOTE_PIANO;
         }
     }
+    */
 }
